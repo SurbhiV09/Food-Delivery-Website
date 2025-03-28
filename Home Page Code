@@ -1,0 +1,152 @@
+&lt;?php
+//include auth.php file on all secure pages
+include(&quot;auth.php&quot;);
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;HOMEPAGE&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;styling.css&quot;&gt;
+&lt;meta charset=&quot;UTF-8&quot; http-equiv=&quot;content-type&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css?family=Pacifico&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;headertop&quot;&gt;
+&lt;ul&gt;
+&lt;a href=&quot;index1.php&quot;&gt;
+&lt;img src=&quot;images/logo.jpg&quot; style=&quot;width: 100px&quot; &quot;padding: 0px 0px&quot; &quot;margin-top: 0px&quot;&gt;
+&lt;/a&gt;
+&lt;a class=&quot;foodism&quot; href=&quot;index1.php&quot;&gt;FOODISM&lt;/a&gt;
+&lt;li&gt;&lt;a href=&quot;logout.php&quot;&gt;Logout&lt;/a&gt;&lt;/li&gt;
+&lt;li style=&quot;color:ivory;&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;?php echo &quot;Hello &quot;. $_SESSION[&quot;username&quot;]; ?&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#categories&quot;&gt;Categories&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/div&gt;
+&lt;div class=&quot;slides&quot; style=&quot;max-width: 100%&quot;&gt;
+&lt;img class=&quot;myslides&quot; src=&quot;images/a.png&quot; style=&quot;width: 1520px&quot; height=&quot;400px&quot;&gt;
+&lt;img class=&quot;myslides&quot; src=&quot;images/b.png&quot; style=&quot;width: 1520px&quot; height=&quot;400px&quot;&gt;
+&lt;img class=&quot;myslides&quot; src=&quot;images/b.jpg&quot; style=&quot;width: 1520px&quot; height=&quot;400px&quot;&gt;
+&lt;img class=&quot;myslides&quot; src=&quot;images/d.jpg&quot; style=&quot;width: 1520px&quot; height=&quot;400px&quot;&gt;
+&lt;img class=&quot;myslides&quot; src=&quot;images/e.jpg&quot; style=&quot;width: 1520px&quot; height=&quot;400px&quot;&gt;
+&lt;a class=&quot;prev&quot; onclick=&quot;plusSlides(-1)&quot;&gt;&amp;#10094;&lt;/a&gt;
+&lt;a class=&quot;next&quot; onclick=&quot;plusSlides(1)&quot;&gt;&amp;#10095;&lt;/a&gt;
+
+&lt;/div&gt;
+&lt;script&gt;
+
+var slideIndex = 1;
+showSlides(slideIndex);
+function plusSlides(n) {
+showSlides(slideIndex += n);
+
+}
+
+function currentSlide(n) {
+showSlides(slideIndex = n);
+}
+function showSlides(n) {
+var i;
+var slides = document.getElementsByClassName(&quot;myslides&quot;);
+var dots = document.getElementsByClassName(&quot;dot&quot;);
+if (n &gt; slides.length) {slideIndex = 1}
+if (n &lt; 1) {slideIndex = slides.length}
+for (i = 0; i &lt; slides.length; i++) {
+slides[i].style.display = &quot;none&quot;;
+}
+for (i = 0; i &lt; dots.length; i++) {
+dots[i].className = dots[i].className.replace(&quot; active&quot;, &quot;&quot;);
+}
+slides[slideIndex-1].style.display = &quot;block&quot;;
+dots[slideIndex-1].className += &quot; active&quot;;
+}
+&lt;/script&gt;
+&lt;script&gt;
+var myIndex=0;
+carouse1();
+function carouse1() {
+var i;
+var x= document.getElementsByClassName(&quot;myslides&quot;);
+for(i=0; i &lt; x.length; i++){
+x[i].style.display=&quot;none&quot;;
+}
+myIndex++;
+if(myIndex &gt; x.length){myIndex = 1}
+x[myIndex-1].style.display=&quot;block&quot;;
+setTimeout(carouse1,3000);
+
+}
+&lt;/script&gt;
+
+&lt;div class=&quot;webpage&quot;&gt; &lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;div class=&quot;decor&quot;&gt;
+&lt;p style=&quot;text-align:center;&quot; id=&quot;categories&quot;&gt;Discover your new favourites here&lt;/p&gt;&lt;/div&gt; &lt;br&gt;&lt;br&gt;
+&lt;/div&gt; &lt;br&gt;&lt;br&gt;
+&lt;div class=&quot;web&quot;&gt;
+&lt;div class=&quot;wrapper&quot;&gt;
+&lt;div class=&quot;menu&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;a href=&quot;index3.php&quot;&gt;
+&lt;img src=&quot;images/indian.jpeg&quot; alt=&quot;Indian Food&quot; class=&quot;image&quot;&gt;
+&lt;div class=&quot;overlay&quot;&gt;
+&lt;div class=&quot;text&quot;&gt;Indian Food&lt;/div&gt;
+&lt;/div&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;menu&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;a href=&quot;index2.php&quot;&gt;
+&lt;img src=&quot;images/chinese.jpg&quot; alt=&quot;Chinese Food&quot; class=&quot;image&quot;&gt;
+&lt;div class=&quot;overlay&quot;&gt;
+&lt;div class=&quot;text&quot;&gt;Chinese Food&lt;/div&gt;
+&lt;/div&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;menu&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;a href=&quot;index5.php&quot;&gt;
+&lt;img src=&quot;images/italian.jpg&quot; alt=&quot;Italian Food&quot; class=&quot;image&quot;&gt;
+&lt;div class=&quot;overlay&quot;&gt;
+&lt;div class=&quot;text&quot;&gt;Italian Food&lt;/div&gt;
+&lt;/div&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;menu&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;a href=&quot;index7.php&quot;&gt;
+&lt;img src=&quot;images/thai.jpg&quot; alt=&quot;Thai Food&quot; class=&quot;image&quot;&gt;
+&lt;div class=&quot;overlay&quot;&gt;
+&lt;div class=&quot;text&quot;&gt;Thai Food&lt;/div&gt;
+&lt;/div&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;menu&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;a href=&quot;index6.php&quot;&gt;
+&lt;img src=&quot;images/continental.png&quot; alt=&quot;Continental Food&quot; class=&quot;image&quot;&gt;
+&lt;div class=&quot;overlay&quot;&gt;
+&lt;div class=&quot;text&quot;&gt;Continental Food&lt;/div&gt;
+&lt;/div&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;menu&quot;&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;a href=&quot;index4.php&quot;&gt;
+
+&lt;img src=&quot;images/desserts.jpg&quot; alt=&quot;Desserts&quot; class=&quot;image&quot;&gt;
+
+&lt;div class=&quot;overlay&quot;&gt;
+
+&lt;div class=&quot;text&quot;&gt;Desserts&lt;/div&gt;
+&lt;/div&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;footer&quot; style=&quot;margin-top:70px;&quot;&gt;
+
+&lt;a href=&quot;index1.php&quot;&gt;&lt;img src=&quot;images/logo.jpg&quot; width=&quot;80px&quot;&gt;&lt;/a&gt;
+&lt;div class=&quot;links&quot;&gt;&lt;a href=&quot;aboutus.php&quot;&gt;About us&lt;/a&gt;&amp;nbsp&amp;nbsp
+&lt;a href=&quot;contactus.php&quot;&gt;Contact&lt;/a&gt;&lt;/div&gt;&lt;br&gt;&lt;br&gt;
+&lt;div class=&quot;bottom&quot;&gt;&lt;p&gt;For the love of food&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
